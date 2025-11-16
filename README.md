@@ -1,7 +1,7 @@
-## EEG-Pipeline-for-Thesis
-# Below is the methods section taken from my thesis, detailing methodological approaches and the reasoning behind them 
+# EEG-Pipeline-for-Thesis
+## Below is the methods section taken from my thesis, detailing methodological approaches and the reasoning behind them 
 
-EEG Data Analysis
+### EEG Data Analysis
 
 For ERP analysis, we focused on the P300-like component measured during the encoding phase, specifically its P3b subcomponent. In line with its expected distribution, amplitudes were extracted from frontal (Fz, F3, F7, F4, F8), central (Cz, C3, C4), and parietal (Pz, P4, P3) electrodes within the 350–700 ms post-stimulus window. This extended time window takes into account developmental differences in cognitive processing speed and the broader, less focal morphology of the P3b component typically observed in children compared to adults ( van Dinteren et al., 2014; Rojas-Benjumea et al., 2015) Previous studies also indicate that parietal regions are particularly responsive to P300 components evoked by auditory and visual input, and the topography of P300 components in children is usually broader and less focused than in adults, often shifting toward more central locations (van Dinteren et al., 2014; Riggins & Scott, 2020).
 The EEG datasets collected from 4-year-old children were preprocessed using a combination of automated algorithms and manual procedures to ensure high-quality signals suitable for further analyses. EEG data were analysed using EEGLAB (version 2020.0), a MATLAB- based toolbox (MathWorks, 2025, R2020b) for electrophysiological data processing. Preprocessing was conducted using the Maryland Analysis of Developmental EEG (MADE) pipeline (Debnath et al., 2020), an automated framework specifically developed for pediatric EEG datasets. Compared to adult EEG, children ́s recordings tend to be shorter in duration and more susceptible to artifacts, requiring adapted preprocessing strategies.
