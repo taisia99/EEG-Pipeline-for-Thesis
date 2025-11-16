@@ -124,10 +124,10 @@ for subject = 1:length(datafile_names)
     
     % Check channel count match
     if length(chanlocs_filtered) ~= size(EEG.data,1)
-        error('❌ Error: Number of channels in EEG.data (%d) does not match filtered locations (%d)', ...
+        error('Error: Number of channels in EEG.data (%d) does not match filtered locations (%d)', ...
             size(EEG.data,1), length(chanlocs_filtered));
     else
-        fprintf('✅ Success: Assigned %d channels with coordinates.\n', length(chanlocs_filtered));
+        fprintf('Success: Assigned %d channels with coordinates.\n', length(chanlocs_filtered));
     end
     
     % Assign and check
@@ -337,7 +337,7 @@ EEG_copy = eeg_checkset(EEG);
     
     % Too many bad channels - enable "gentle" mode
     if sum(bad_chans) > EEG.nbchan * 0.8
-        warning('⚠️ Too many bad channels - skipping removal, interpolating noisy channels only');
+        warning('Too many bad channels - skipping removal, interpolating noisy channels only');
         to_remove = false(size(to_remove)); % Don't remove channels
     end
     
@@ -366,7 +366,7 @@ if ~isempty(removed_labels) && ~too_many_bad
     EEG = pop_select(EEG, 'nochannel', removed_labels);
     EEG = eeg_checkset(EEG);
 elseif too_many_bad
-    warning('⚠️ Too many channels marked bad (%d of %d) - skipping removal, interpolating only.', ...
+    warning('Too many channels marked bad (%d of %d) - skipping removal, interpolating only.', ...
         numel(removed_labels), EEG.nbchan);
     removed_labels = {};  % Reset
 end
